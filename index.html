@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="theme-color" content="#030712">
+<title>QCM Interactif – Examen National 2026 | Web3 Edition</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header id="site-header">
+  <div class="header-inner">
+    <div class="header-text">
+      <h1 class="header-title">Examen National 2026 — Session Ordinaire</h1>
+    </div>
+    <button id="theme-toggle" class="theme-toggle" onclick="toggleTheme()" title="Basculer le thème">
+      <i class="fas fa-moon"></i>
+    </button>
+    <div class="header-badge">
+      <span>20 pts</span>
+      <small>40 Questions</small>
+    </div>
+  </div>
+  <div class="progress-wrap">
+    <div class="progress-bar" id="main-progress"></div>
+    <span class="progress-label" id="progress-label">0 / 40</span>
+  </div>
+</header>
+
+<!-- ===== LANDING SCREEN ===== -->
+<div id="screen-landing" class="screen active">
+  <div class="landing-card">
+    <div class="landing-icon"><i class="fas fa-atom"></i></div>
+    <h2>QCM – Examen National 2026</h2>
+    <p class="landing-desc">Version QCM interactive de l'examen national marocain de Physique-Chimie 2026 — Session ordinaire, filière Sciences Physiques.</p>
+
+    <div class="landing-stats">
+      <div class="stat-box">
+        <i class="fas fa-flask" style="color:var(--chimie)"></i>
+        <span>14 questions</span>
+        <small>Chimie · 7 pts</small>
+      </div>
+      <div class="stat-box">
+        <i class="fas fa-bolt" style="color:var(--physique)"></i>
+        <span>26 questions</span>
+        <small>Physique · 13 pts</small>
+      </div>
+      <div class="stat-box">
+        <i class="fas fa-clock"></i>
+        <span>~90 min</span>
+        <small>Durée estimée</small>
+      </div>
+    </div>
+
+    <!-- Exam topics overview -->
+    <div class="exam-overview">
+      <h3><i class="fas fa-list-ul"></i> Contenu de l'examen</h3>
+      <div class="overview-grid">
+        <div class="overview-item chimie-ov">
+          <span class="ov-badge">⚗️ Chimie</span>
+          <ul>
+            <li><strong>Q1–Q7</strong> Électrolyse du chlorure d'étain II (SnCl₂)</li>
+            <li><strong>Q8–Q14</strong> Ammoniac NH₃ : réaction acide-base avec H₂O et HCl</li>
+          </ul>
+        </div>
+        <div class="overview-item physique-ov">
+          <span class="ov-badge ondes-ov">🌊 Ondes</span>
+          <ul>
+            <li><strong>Q15–Q19</strong> Diffraction de la lumière – mesure du diamètre d'un cheveu</li>
+          </ul>
+        </div>
+        <div class="overview-item physique-ov">
+          <span class="ov-badge elec-ov">⚡ Électricité</span>
+          <ul>
+            <li><strong>Q20–Q23</strong> Dipôle RC – réponse à un échelon de tension</li>
+            <li><strong>Q24–Q29</strong> Oscillations libres RLC + réception AM</li>
+          </ul>
+        </div>
+        <div class="overview-item physique-ov">
+          <span class="ov-badge meca-ov">🔩 Mécanique</span>
+          <ul>
+            <li><strong>Q30–Q40</strong> Solide sur plan incliné rugueux – forces, énergie, cinématique</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="landing-info">
+      <h3><i class="fas fa-info-circle"></i> Consignes</h3>
+      <ul>
+        <li>Chaque question admet <strong>une seule bonne réponse</strong>.</li>
+        <li>Vous pouvez naviguer librement entre les questions.</li>
+        <li>Cliquez sur <strong>« Terminer l'examen »</strong> pour voir le score et la correction.</li>
+        <li>Chaque bonne réponse vaut <strong>0,5 point</strong>.</li>
+        <li>L'usage de la calculatrice non programmable est autorisé.</li>
+        <li>Donner les expressions littérales avant les applications numériques.</li>
+      </ul>
+    </div>
+
+    <div class="landing-data">
+      <h3><i class="fas fa-table"></i> Données générales</h3>
+      <div class="data-grid">
+        <div class="data-item"><span class="data-key">Faraday F</span><span class="data-val">9,65 × 10⁴ C·mol⁻¹</span></div>
+        <div class="data-item"><span class="data-key">M(Sn)</span><span class="data-val">118,7 g·mol⁻¹</span></div>
+        <div class="data-item"><span class="data-key">M(Cl)</span><span class="data-val">35,5 g·mol⁻¹</span></div>
+        <div class="data-item"><span class="data-key">Ke (25 °C)</span><span class="data-val">10⁻¹⁴</span></div>
+        <div class="data-item"><span class="data-key">log 1,26</span><span class="data-val">0,10</span></div>
+        <div class="data-item"><span class="data-key">Vm (CN)</span><span class="data-val">22,4 L·mol⁻¹</span></div>
+        <div class="data-item"><span class="data-key">λ laser rouge</span><span class="data-val">632,8 nm</span></div>
+        <div class="data-item"><span class="data-key">Pesanteur g</span><span class="data-val">10 m·s⁻²</span></div>
+        <div class="data-item"><span class="data-key">sin 30°</span><span class="data-val">0,500</span></div>
+        <div class="data-item"><span class="data-key">cos 30°</span><span class="data-val">0,866</span></div>
+      </div>
+    </div>
+
+    <button class="btn-primary btn-start" onclick="startExam()">
+      <i class="fas fa-play-circle"></i> Commencer l'examen
+    </button>
+  </div>
+</div>
+
+<!-- ===== EXAM SCREEN ===== -->
+<div id="screen-exam" class="screen">
+  <div class="section-nav" id="section-nav">
+    <button class="sec-tab active" id="tab-chimie" onclick="goToSection('chimie')">
+      <i class="fas fa-flask"></i> Chimie <span class="sec-score" id="chimie-done">0/14</span>
+    </button>
+    <button class="sec-tab" id="tab-physique" onclick="goToSection('physique')">
+      <i class="fas fa-atom"></i> Physique <span class="sec-score" id="physique-done">0/26</span>
+    </button>
+  </div>
+
+  <div class="exam-layout">
+    <aside class="q-map" id="q-map">
+      <h4><i class="fas fa-th"></i> Navigation</h4>
+      <div class="q-grid" id="q-grid"></div>
+      <div class="map-legend">
+        <span class="dot dot-current"></span>En cours
+        <span class="dot dot-answered"></span>Répondu
+        <span class="dot dot-unanswered"></span>Non répondu
+      </div>
+      <button class="btn-finish" onclick="confirmFinish()">
+        <i class="fas fa-flag-checkered"></i> Terminer l'examen
+      </button>
+    </aside>
+
+    <main class="q-main">
+      <div id="question-card" class="question-card"></div>
+      <div class="q-nav-btns">
+        <button class="btn-nav" id="btn-prev" onclick="prevQuestion()">
+          <i class="fas fa-chevron-left"></i> Précédent
+        </button>
+        <button class="btn-nav btn-next" id="btn-next" onclick="nextQuestion()">
+          Suivant <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </main>
+  </div>
+</div>
+
+<!-- ===== RESULTS SCREEN ===== -->
+<div id="screen-results" class="screen">
+  <div class="results-header">
+    <div class="results-icon" id="results-icon"><i class="fas fa-trophy"></i></div>
+    <h2>Résultats — Examen National 2026</h2>
+    <div class="score-circle" id="score-circle">
+      <svg viewBox="0 0 120 120">
+        <circle cx="60" cy="60" r="54" fill="none" stroke="#e8edf5" stroke-width="10"/>
+        <circle cx="60" cy="60" r="54" fill="none" stroke="var(--secondary)" stroke-width="10"
+                stroke-dasharray="339.3" stroke-dashoffset="339.3"
+                stroke-linecap="round" transform="rotate(-90 60 60)" id="score-arc"/>
+      </svg>
+      <div class="score-text">
+        <span id="score-num">0</span>
+        <small>/20</small>
+      </div>
+    </div>
+    <div class="score-details" id="score-details"></div>
+    <div class="result-actions">
+      <button class="btn-primary" onclick="showCorrection()">
+        <i class="fas fa-check-double"></i> Voir la correction
+      </button>
+      <button class="btn-secondary" onclick="retryExam()">
+        <i class="fas fa-redo"></i> Recommencer
+      </button>
+      <button class="btn-secondary" onclick="exportJSON()">
+        <i class="fas fa-file-code"></i> Download JSON
+      </button>
+      <button class="btn-secondary" onclick="exportCSV()">
+        <i class="fas fa-file-csv"></i> Download CSV
+      </button>
+    </div>
+  </div>
+  <div id="correction-section" style="display:none">
+    <h2 class="correction-title"><i class="fas fa-book-open"></i> Correction détaillée — Examen 2026</h2>
+    <div id="correction-content"></div>
+  </div>
+</div>
+
+<!-- ===== MODAL ===== -->
+<div id="modal-overlay" class="modal-overlay" style="display:none">
+  <div class="modal-box">
+    <i class="fas fa-question-circle modal-icon"></i>
+    <h3>Terminer l'examen ?</h3>
+    <p id="modal-msg">Êtes-vous sûr de vouloir soumettre vos réponses ?</p>
+    <div class="modal-actions">
+      <button class="btn-secondary" onclick="closeModal()">Annuler</button>
+      <button class="btn-primary" onclick="finishExam()">Confirmer</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== TIMER ===== -->
+<div class="timer-widget" id="timer-widget" style="display:none">
+  <i class="fas fa-clock"></i>
+  <span id="timer-display">00:00</span>
+</div>
+
+<script src="/js/questions.js"></script>
+<script src="/js/graphs.js"></script>
+<script src="/js/app.js"></script>
+</body>
+</html>
+
