@@ -50,6 +50,7 @@ function startExam() {
   startTimer();
   document.getElementById("timer-widget").style.display = "flex";
 }
+window.startExam = startExam;
 
 function showScreen(id) {
   document
